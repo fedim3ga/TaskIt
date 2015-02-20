@@ -16,6 +16,7 @@ class TaskDetailViewController: UIViewController {
     
     
     var detailTaskModel: TaskModel!
+    var mainVC:ViewController!
     
     
     override func viewDidLoad() {
@@ -36,9 +37,17 @@ class TaskDetailViewController: UIViewController {
     
     
     @IBAction func cancelButtonPressed(sender: UIBarButtonItem) {
-        
         self.navigationController?.popViewControllerAnimated(true)
         
+        
+    }
+    
+    @IBAction func doneButtonPressed(sender: UIBarButtonItem) {
+        
+        var task = TaskModel(task: taskTextField.text, subtask: subTaskTextField.text, date: datePicker.date)
+        mainVC.taskArray[mainVC.tableView.indexPathForSelectedRow()!.row] = task
+        
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     

@@ -35,6 +35,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "showTaskDetail" {
@@ -42,7 +47,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let indexPath = tableView.indexPathForSelectedRow()
             let thisTask = taskArray[indexPath!.row]
             detailVC.detailTaskModel = thisTask
+            detailVC.mainVC = self
         }
+        else if segue.identifier == "showTaskAdd" {
+            // Get access to AddTaskViewController
+            let addTaskVC:AddTaskViewController = segue.destinationViewController as AddTaskViewController
+            // Basically, addTaskVC constant here is mainVC from AddTaskViewController
+            addTaskVC.mainVC = self
+        }
+        
+        
+        
         
     }
     

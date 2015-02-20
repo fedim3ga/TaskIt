@@ -101,7 +101,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="8Ds-ew-bUL">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="8Ds-ew-bUL">
                                 <rect key="frame" x="0.0" y="189" width="320" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="445931114.12549299">
                                     <!--2015-02-18 05:45:14 +0000-->
@@ -117,7 +117,11 @@
                                 <action selector="cancelButtonPressed:" destination="bna-7H-5Qe" id="L0N-t4-F7v"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="MXs-Ui-jN3"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="MXs-Ui-jN3">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="bna-7H-5Qe" id="uUj-X6-vBi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -156,6 +160,9 @@
                                 <state key="normal" title="Add Task">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addTaskButtonTapped:" destination="aaO-Iv-xI2" eventType="touchUpInside" id="3aY-d7-Hqb"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3xF-to-xGC">
                                 <rect key="frame" x="16" y="112" width="280" height="30"/>
@@ -167,7 +174,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Aes-0H-kbo">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="Aes-0H-kbo">
                                 <rect key="frame" x="0.0" y="277" width="320" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="446017183.08885902">
                                     <!--2015-02-19 05:39:43 +0000-->
