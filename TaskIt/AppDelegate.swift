@@ -9,6 +9,10 @@
 import UIKit
 import CoreData
 
+
+// This is the AppDelegate. All our CoreData boilerplate code is set up here! We can very easily access the AppDelegate from all classes, that's why the CoreData code is here!
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

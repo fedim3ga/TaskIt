@@ -13,7 +13,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var tableView: UITableView!
     
+    //Instance of managedObjectContext.
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+    //Instance of NSFetchedResultsController
     var fetchedResultsController:NSFetchedResultsController = NSFetchedResultsController()
     
     override func viewDidLoad() {
@@ -32,6 +34,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showTaskDetail" {
+            //Get access TaskDetailViewController. Get the indexPath for the cell. Create 'task' as a TaskModel for the cell selected (at indexPath). Set the detailTaskModel to be 'thisTask'. I.e, the task in the detailVC is set to the task selected!
             let detailVC:TaskDetailViewController = segue.destinationViewController as TaskDetailViewController
             let indexPath = tableView.indexPathForSelectedRow()
             let thisTask = fetchedResultsController.objectAtIndexPath(indexPath!) as TaskModel
@@ -41,7 +44,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         else if segue.identifier == "showTaskAdd" {
             // Get access to AddTaskViewController
             let addTaskVC:AddTaskViewController = segue.destinationViewController as AddTaskViewController
-            // Basically, addTaskVC constant here is mainVC from AddTaskViewController
+            
 
         }
     }
